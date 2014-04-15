@@ -6,6 +6,12 @@
     <div class="row text-center">
       <div class="col">
         <h1>Shopping</h1>
+        <h5>{{ user_name }}</h5>
+        <img ng-src="{{avatar}}" />
+        <a class="item item-icon-left" ng-click="signOut()">
+          <i class="icon ion-log-out"></i>
+          Sign Out
+        </a>
       </div>
     </div>
   </ion-content>
