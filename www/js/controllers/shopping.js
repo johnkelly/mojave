@@ -4,6 +4,6 @@ app.controller('ShoppingCtrl', function($scope, $state, auth) {
 
   $scope.signOut = function() {
     auth.signout();
-    $state.go('app.signin');
+    $state.go('signin');
   }
 })

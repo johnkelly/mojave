@@ -1,6 +1,6 @@
 // Ionic Starter App
 
-var app = angular.module('mojave', ['ionic', 'auth0', 'authInterceptor', 'ngCookies'])
+var app = angular.module('mojave', ['ionic', 'auth0', 'authInterceptor', 'ngResource', 'ngCookies'])
 
 app.run(function($ionicPlatform, $rootScope, $state, auth, AUTH_EVENTS, Loading) {
   $ionicPlatform.ready(function() {
@@ -15,7 +15,7 @@ app.run(function($ionicPlatform, $rootScope, $state, auth, AUTH_EVENTS, Loading)
     });
   });
   $rootScope.$on(AUTH_EVENTS.loginFailed, function () {
-    $state.go('app.signin', {error: true}).finally(function() {
+    $state.go('signin', {error: true}).finally(function() {
       Loading.stop();
     });
   });
@@ -24,7 +24,7 @@ app.run(function($ionicPlatform, $rootScope, $state, auth, AUTH_EVENTS, Loading)
     if (to.data && to.data.requiresLogin) {
       if (!auth.isAuthenticated) {
         e.preventDefault();
-        $state.go('app.signin');
+        $state.go('signin');
       }
     }
   });
@@ -41,24 +41,20 @@ app.config(function($stateProvider, $urlRouterProvider, authProvider, $httpProvi
 
   $stateProvider
 
+    .state('signin',{
+      url: "/signin",
+      templateUrl: "templates/signin.html",
+      controller: "SignInCtrl",
+      data: {
+        requiresLogin: false
+      }
+    })
+
     .state('app', {
       url: "/app",
       abstract: true,
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
-    })
-
-    .state('app.signin',{
-      url: "/signin",
-      views: {
-        'menuContent' : {
-          templateUrl: "templates/signin.html",
-          controller: "SignInCtrl"
-        }
-      },
-      data: {
-        requiresLogin: false
-      }
     })
 
     .state('app.recipes', {
@@ -139,7 +135,7 @@ app.config(function($stateProvider, $urlRouterProvider, authProvider, $httpProvi
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/signin');
+  $urlRouterProvider.otherwise('/signin');
 
   $httpProvider.interceptors.push('authInterceptor');
 });
