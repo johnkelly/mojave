@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+#flash-messages .error{
+  background: red;
+  color: white;
+}
+
+#flash-messages .success{
+  background: green;
+  color: white;
+}

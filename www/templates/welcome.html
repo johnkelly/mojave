@@ -1,0 +1,58 @@
+<ion-view title="Welcome">
+<div class="row">
+  <div class="col"><flash:messages></flash:messages></div>
+</div>
+  <ion-content class="has-header">
+  <div class="content has-header">
+    <div class="welcome-information" ng-hide="showSignIn || showSignUp">
+      <h1>Welcome info here</h1>
+      <div class="row">
+        <div class="col">
+          <button class="button button-block button-positive" ng-click="toggleShowSignUp()">Create Account</button>
+        </div>
+        <div class="col">
+          <button class="button button-block button-positive" ng-click="toggleShowSignIn()">Sign In</button>
+        </div>
+      </div>
+    </div>
+    <div ng-show="showSignIn">
+      <form ng-submit="signIn()">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="email" placeholder="Email" ng-model="signin.email" required />
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="signin.password" required />
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Sign In</button>
+          <button type="reset" ng-click ="toggleShowSignIn()" class="button button-block button-assertive">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div ng-show="showSignUp">
+      <form ng-submit="signUp()">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="email" placeholder="email" ng-model="signup.email" required />
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="password" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." required />
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="password confirmation" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="first name" ng-model="signup.first_name" required />
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Sign Up</button>
+          <button type="reset" ng-click ="toggleShowSignUp()" class="button button-block button-assertive">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
