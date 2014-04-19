@@ -43,7 +43,7 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
       function(response) {
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.gravatar, user.first_name);
-        $state.go('app.dashboard');
+        $state.go('app.kitchen');
         flash([{ level: 'success', text: "Welcome!" }]);
       },
       function(response) {

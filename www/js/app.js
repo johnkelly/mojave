@@ -114,6 +114,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
       data: {
         requiresLogin: true
       }
+    })
+
+    .state('app.kitchen', {
+      url: "/kitchen",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/kitchen.html",
+          controller: 'KitchenCtrl'
+        }
+      },
+      data: {
+        requiresLogin: true
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/welcome');

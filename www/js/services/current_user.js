@@ -28,7 +28,7 @@ app.service('CurrentUser', function(localStorageService) {
   }
 
   this.authorization_header = function() {
-    if(this.has_credentials()) {
+    if(this.isAuthenticated()) {
       return { 'Authorization': 'Token token="' + this.mojave_token() + '", email="' + this.email() + '"' };
     } else {
       return { 'Authorization': 'Token token="null"' };
