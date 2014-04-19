@@ -64,12 +64,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.inventory', {
-      url: "/inventory",
+    .state('app.ingredients', {
+      url: "/ingredients",
       views: {
         'menuContent' :{
-          templateUrl: "templates/inventory.html",
-          controller: 'InventoryCtrl'
+          templateUrl: "templates/ingredients.html",
+          controller: 'IngredientsCtrl'
         }
       },
       data: {
