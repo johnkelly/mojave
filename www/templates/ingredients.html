@@ -6,14 +6,35 @@
     <div class="row text-center">
       <div class="col">
         <h1>Ingredients</h1>
+        <div class="row">
+          <form ng-submit="createIngredient()">
+            <div class="col">
+              <input type="text" placeholder="Food" ng-model="newIngredient.food_name" required />
+            </div>
+            <div class="col">
+              <input type="number" placeholder="Quantity" ng-model="newIngredient.quantity" required />
+            </div>
+            <div class="col">
+              <select ng-model="newIngredient.measurement_id">
+                <option ng-repeat="measurement in measurements" value="{{ measurement.id }}">{{ measurement.name }}</option>
+              </select>
+            </div>
+            <div class="padding">
+              <button type="submit" class="button button-block button-positive">Create</button>
+              <button type="reset" ng-click ="toggleShowSignIn()" class="button button-block button-assertive">Cancel</button>
+            </div>
+          </form>
+        </div>
         <table>
           <tr>
             <td>Food</td>
             <td>Quantity</td>
+            <td>Action</td>
           </tr>
           <tr ng-repeat="ingredient in ingredients">
             <td>{{ ingredient.food.name }}</td>
             <td>{{ ingredient.quantity }} {{ingredient.measurement.name }}</td>
+            <td><button ng-click="deleteIngredient(ingredient, $index)">Discard</button>
           </tr>
         </table>
       </div>
