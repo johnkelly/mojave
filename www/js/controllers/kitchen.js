@@ -4,7 +4,15 @@ app.controller('KitchenCtrl', function($scope, $state, Appliance, Helpers) {
     $scope.appliances = $scope.appliance_data.appliances;
   });
 
-  $scope.removeAppliance = function(appliance, index) {
+  $scope.toggleAppliance = function(appliance) {
+    if(appliance.owned) {
+      $scope.removeAppliance(appliance)
+    } else {
+      $scope.addAppliance(appliance)
+    }
+  }
+
+  $scope.removeAppliance = function(appliance) {
     Appliance.remove({ id: appliance.id }, function() {
       appliance.owned = false;
     })
