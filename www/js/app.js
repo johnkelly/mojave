@@ -38,32 +38,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'AppCtrl'
     })
 
-    .state('app.recipes', {
-      url: "/recipes",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/recipes.html",
-          controller: 'RecipesCtrl'
-        }
-      },
-      data: {
-        requiresLogin: true
-      }
-    })
-
-    .state('app.recipe', {
-      url: "/recipes/:recipeId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/recipe.html",
-          controller: 'RecipeCtrl'
-        }
-      },
-      data: {
-        requiresLogin: true
-      }
-    })
-
     .state('app.ingredients', {
       url: "/ingredients",
       views: {
@@ -77,38 +51,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.shopping', {
-      url: "/shopping",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/shopping.html",
-          controller: 'ShoppingCtrl'
-        }
-      },
-      data: {
-        requiresLogin: true
-      }
-    })
-
     .state('app.meals', {
       url: "/meals",
       views: {
         'menuContent' :{
           templateUrl: "templates/meals.html",
           controller: 'MealsCtrl'
-        }
-      },
-      data: {
-        requiresLogin: true
-      }
-    })
-
-    .state('app.dashboard', {
-      url: "/dashboard",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/dashboard.html",
-          controller: 'DashboardCtrl'
         }
       },
       data: {

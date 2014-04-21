@@ -6,6 +6,9 @@
     <div class="row text-center">
       <div class="col">
         <h1>Meals</h1>
+        <img ng-src="{{gravatar()}}&s=30" title="{{user.first_name}}" alt="Gravatar" class="gravatar" width="30" height="30" />
+        <h5>{{ first_name() }}</h5>
+        <button ng-click="signOut()">Sign Out</button>
       </div>
     </div>
   </ion-content>

@@ -12,7 +12,7 @@ app.factory('Helpers', function(flash, $state, CurrentUser) {
   root.redirect_if_authenticated = function(response) {
     if(CurrentUser.isAuthenticated()){
       flash([{ level: 'error', text: "You are already signed in." }]);
-      $state.go('app.dashboard');
+      $state.go('app.meals');
     }
   }
   return root;

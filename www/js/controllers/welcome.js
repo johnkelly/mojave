@@ -19,14 +19,12 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
   }
 
   $scope.signIn = function() {
-    console.log($scope.signin);
-
     Session.save(
       { session: $scope.signin },
       function(response) {
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.gravatar, user.first_name);
-        $state.go('app.dashboard');
+        $state.go('app.meals');
         flash([{ level: 'success', text: "Welcome Back!" }]);
       },
       function(response) {
@@ -36,8 +34,6 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
   }
 
   $scope.signUp = function() {
-    console.log($scope.signup);
-
     Registration.save(
       { register: $scope.signup },
       function(response) {
