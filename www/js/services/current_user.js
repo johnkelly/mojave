@@ -1,9 +1,8 @@
 app.service('CurrentUser', function(localStorageService) {
 
-  this.store = function(token, email, gravatar, first_name){
+  this.store = function(token, email, first_name){
     localStorageService.add('mojave_token', token);
     localStorageService.add('mojave_email', email);
-    localStorageService.add('mojave_gravatar', gravatar);
     localStorageService.add('mojave_first_name', first_name);
   }
 
@@ -17,10 +16,6 @@ app.service('CurrentUser', function(localStorageService) {
 
   this.email = function(){
     return localStorageService.get('mojave_email');
-  }
-
-  this.gravatar = function(){
-    return localStorageService.get('mojave_gravatar');
   }
 
   this.first_name = function(){
@@ -42,6 +37,5 @@ app.service('CurrentUser', function(localStorageService) {
   this.update = function(user){
     localStorageService.add('mojave_email', user.email);
     localStorageService.add('mojave_first_name', user.first_name);
-    localStorageService.add('mojave_gravatar', user.gravatar);
   }
 });

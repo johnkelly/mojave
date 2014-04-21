@@ -24,4 +24,17 @@
       </ion-list>
     </ion-content>
   </ion-side-menu>
+
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-balanced">
+    <h1 class="title">{{ first_name() }}'s Account</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close ng-click="signOut()">
+          Sign Out
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
 </ion-side-menus>

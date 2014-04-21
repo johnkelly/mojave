@@ -23,7 +23,7 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
       { session: $scope.signin },
       function(response) {
         var user = response.user;
-        CurrentUser.store(user.auth_token, user.email, user.gravatar, user.first_name);
+        CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.meals');
         flash([{ level: 'success', text: "Welcome Back!" }]);
       },
@@ -38,7 +38,7 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
       { register: $scope.signup },
       function(response) {
         var user = response.user;
-        CurrentUser.store(user.auth_token, user.email, user.gravatar, user.first_name);
+        CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.kitchen');
         flash([{ level: 'success', text: "Welcome!" }]);
       },

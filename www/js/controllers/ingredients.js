@@ -1,4 +1,4 @@
-app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measurement, Helpers) {
+app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measurement, Helpers, CurrentUser) {
   $scope.newIngredient = {}
 
   $scope.ingredient_data = Ingredient.get({}, function() {
@@ -8,7 +8,6 @@ app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measureme
   $scope.measurement_data = Measurement.get({}, function() {
     $scope.measurements = $scope.measurement_data.measurements;
   });
-
 
   $scope.createIngredient = function() {
     Ingredient.save(
