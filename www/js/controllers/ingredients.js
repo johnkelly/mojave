@@ -22,9 +22,9 @@ app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measureme
     );
   }
 
-  $scope.deleteIngredient = function(ingredient, index) {
+  $scope.deleteIngredient = function(ingredient) {
     Ingredient.remove({ id: ingredient.id }, function() {
-      $scope.ingredients.splice(index, 1);
+      $scope.ingredients.splice($scope.ingredients.indexOf(ingredient), 1);
     })
   }
 })
