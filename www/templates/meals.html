@@ -6,10 +6,23 @@
   <button menu-toggle="'right'" class="button button-icon icon ion-ios7-person"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <div class="row text-center">
-      <div class="col">
-        <h1>Meals</h1>
-      </div>
+    <div class="card" ng-repeat="user_meal in user_meals">
+      <a class="item item-text-wrap">
+        {{ user_meal.meal.name }}
+        <button ng-click="deleteUserMeal(user_meal)">Discard</button>
+      </a>
+    </div>
+    <div class="row">
+      <form ng-submit="createUserMeal()">
+        <div class="col">
+          <select ng-model="newUserMeal.meal_id">
+            <option value="f16fa032-d1c7-4989-8062-4ec7202b06cd">Key Lime Pie</option>
+          </select>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Create</button>
+        </div>
+      </form>
     </div>
   </ion-content>
 </ion-view>
