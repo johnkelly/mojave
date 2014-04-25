@@ -16,7 +16,7 @@
       <form ng-submit="createUserMeal()">
         <div class="col">
           <select ng-model="newUserMeal.meal_id">
-            <option value="f16fa032-d1c7-4989-8062-4ec7202b06cd">Key Lime Pie</option>
+            <option ng-repeat="meal in meals" value="{{meal.id}}">{{meal.name}}</option>
           </select>
         </div>
         <div class="padding">

@@ -1,8 +1,12 @@
-app.controller('MealsCtrl', function($scope, $state, UserMeal, CurrentUser, Helpers) {
+app.controller('MealsCtrl', function($scope, $state, UserMeal, Meal, CurrentUser, Helpers) {
   $scope.newUserMeal = {}
 
   $scope.user_meal_data = UserMeal.get({}, function() {
     $scope.user_meals = $scope.user_meal_data.meals;
+  });
+
+  $scope.meal_data = Meal.get({}, function() {
+    $scope.meals = $scope.meal_data.meals;
   });
 
   $scope.createUserMeal = function() {
