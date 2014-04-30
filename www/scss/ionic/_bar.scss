@@ -59,7 +59,9 @@
 
       input {
         padding-left: 8px;
+        width: 94%;
         height: 28px;
+        background: transparent;
       }
     }
   }
@@ -149,6 +151,7 @@
     }
 
     &.button-icon {
+      font-size: $bar-title-font-size;
       .icon:before,
       &:before,
       &.icon-left:before,
@@ -173,7 +176,8 @@
       }
     }
 
-    &.back-button.active {
+    &.back-button.active,
+    &.back-button.activated {
       opacity: 1;
     }
   }
@@ -193,7 +197,7 @@
   .title + .button:last-child,
   > .button + .button:last-child,
   > .button.pull-right,
-  .buttons.pull-right, 
+  .buttons.pull-right,
   .title + .buttons {
     position: absolute;
     top: 5px;
