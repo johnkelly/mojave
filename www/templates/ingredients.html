@@ -12,13 +12,13 @@
         <input type="text" ng-model="query", placeholder="Search Ingredients" />
       </label>
     </div>
-    <div class="card">
-      <a class="item item-text-wrap" ng-repeat="ingredient in ingredients | ingredientFilter:query | orderBy:['food.name']">
+    <ion-list show-delete="true">
+      <ion-item ng-repeat="ingredient in ingredients | ingredientFilter:query | orderBy:['food.name']">
         {{ ingredient.food.name }}
         {{ ingredient.quantity }} {{ingredient.measurement.name }}
-        <button ng-click="deleteIngredient(ingredient)">Discard</button>
-      </a>
-    </div>
+        <ion-delete-button class="ion-android-trash button icon button-icon" ng-click="deleteIngredient(ingredient)"></ion-delete-button>
+      </ion-item>
+    </ion-list>
     <div class="row">
       <form ng-submit="createIngredient()">
         <div class="col">
