@@ -1,3 +1,3 @@
-app.factory('Registration', function ($resource) {
-    return $resource('http://localhost:5000/registration', {});
+app.factory('Registration', function ($resource, Host) {
+    return $resource(Host + '/registration', {});
 });

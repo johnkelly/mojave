@@ -19,6 +19,8 @@ app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
   });
 })
 
+app.constant('Host', 'http://localhost:5000');
+
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 

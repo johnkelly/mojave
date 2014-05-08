@@ -1,5 +1,5 @@
-app.factory('Appliance', function ($resource, CurrentUser) {
-  return $resource('http://localhost:5000/user/appliances/:id',
+app.factory('Appliance', function ($resource, CurrentUser, Host) {
+  return $resource(Host + '/user/appliances/:id',
     { id: '@id' },
     {
       'get':    { method:'GET', headers: CurrentUser.authorization_header() },
