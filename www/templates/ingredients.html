@@ -5,13 +5,15 @@
   <ion-nav-buttons side="right">
   <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" scroll="false">
+  <div ng-hide="showNewIngredientView">
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
         <input type="text" ng-model="query", placeholder="Search Ingredients" />
       </label>
     </div>
+    <ion-content class="has-search-box" scroll="true">
     <ion-list show-delete="true">
       <ion-item ng-repeat="ingredient in ingredients | ingredientFilter:query | orderBy:['food.name']">
         {{ ingredient.food.name }}
@@ -19,24 +21,32 @@
         <ion-delete-button class="ion-android-trash button icon button-icon" ng-click="deleteIngredient(ingredient)"></ion-delete-button>
       </ion-item>
     </ion-list>
-    <div class="row">
-      <form ng-submit="createIngredient()">
-        <div class="col">
-          <input type="text" placeholder="Food" ng-model="newIngredient.food_name" required />
-        </div>
-        <div class="col">
-          <input type="number" placeholder="Quantity" ng-model="newIngredient.quantity" required />
-        </div>
-        <div class="col">
-          <select ng-model="newIngredient.measurement_id">
-            <option ng-repeat="measurement in measurements" value="{{ measurement.id }}">{{ measurement.name }}</option>
-          </select>
-        </div>
-        <div class="padding">
-          <button type="submit" class="button button-block button-positive">Create</button>
-          <button type="reset" ng-click ="toggleShowSignIn()" class="button button-block button-assertive">Cancel</button>
-        </div>
-      </form>
+    </ion-content>
+    <div class="bar bar-footer with_button">
+      <button ng-click="toggleIngredientView()" class="button button-full button-positive">Add Ingredients</button>
     </div>
+  </div>
+  <div ng-show="showNewIngredientView">
+    <form ng-submit="createIngredient()">
+      <div class="col">
+        <input type="text" placeholder="Food" ng-model="newIngredient.food_name" required />
+      </div>
+      <div class="col">
+        <input type="number" placeholder="Quantity" ng-model="newIngredient.quantity" required />
+      </div>
+      <div class="col">
+        <select ng-model="newIngredient.measurement_id">
+          <option ng-repeat="measurement in measurements" value="{{ measurement.id }}">{{ measurement.name }}</option>
+        </select>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Create</button>
+        <button type="reset" ng-click ="toggleShowSignIn()" class="button button-block button-assertive">Cancel</button>
+      </div>
+    </form>
+    <div class="bar bar-footer with_button">
+      <button ng-click="toggleIngredientView()" class="button button-full button-assertive">Return to Ingredient List</button>
+    </div>
+  </div>
   </ion-content>
 </ion-view>

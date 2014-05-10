@@ -1,5 +1,10 @@
 app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measurement, Helpers, CurrentUser) {
   $scope.newIngredient = {}
+  $scope.showNewIngredientView = false;
+
+  $scope.toggleIngredientView = function() {
+    $scope.showNewIngredientView = !$scope.showNewIngredientView;
+  }
 
   $scope.ingredient_data = Ingredient.get({}, function() {
     $scope.ingredients = $scope.ingredient_data.ingredients;

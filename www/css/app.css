@@ -7281,6 +7281,9 @@ a.button {
   background: green;
   color: white; }
 
+.has-search-box {
+  top: 85px; }
+
 .splash_back {
   background: url("../img/mojave_splash.jpg");
   background-size: auto 100%;
@@ -7294,3 +7297,9 @@ a.button {
     .splash_back .welcome-information h2 {
       color: #ffffff;
       font-family: 'Lato', sans-serif; }
+
+.bar-footer.with_button {
+  height: 60px;
+  padding: 0px; }
+  .bar-footer.with_button .button-full {
+    height: 100%; }

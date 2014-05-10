@@ -19,6 +19,10 @@ $assertive: #283B3B !default;
   color: white;
 }
 
+.has-search-box {
+  top: 85px;
+}
+
 .splash_back {
   background: url('../img/mojave_splash.jpg');
   background-size: auto 100%;
@@ -39,4 +43,12 @@ $assertive: #283B3B !default;
   }
 }
 
+.bar-footer.with_button {
+  height: 60px;
+  padding: 0px;
+
+  .button-full {
+    height: 100%;
+  }
+}
 
