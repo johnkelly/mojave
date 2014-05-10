@@ -22,6 +22,7 @@ $assertive: #283B3B !default;
 .splash_back {
   background: url('../img/mojave_splash.jpg');
   background-size: auto 100%;
+  min-height:100%;
 
   .welcome-information {
     text-align: center;

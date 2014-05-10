@@ -7,6 +7,9 @@ app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    if(window.cordova){
+      cordova.plugins && cordova.plugins.Keyboard && cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
   });
 
   $rootScope.$on('$stateChangeStart', function(e, to) {
