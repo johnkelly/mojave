@@ -7298,8 +7298,10 @@ a.button {
       color: #ffffff;
       font-family: 'Lato', sans-serif; }
 
-.bar-footer.with_button {
-  height: 60px;
+.bar-footer {
   padding: 0px; }
+
+.bar-footer.with_button {
+  height: 60px; }
   .bar-footer.with_button .button-full {
     height: 100%; }

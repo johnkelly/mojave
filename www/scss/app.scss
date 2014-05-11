@@ -43,9 +43,12 @@ $assertive: #283B3B !default;
   }
 }
 
+.bar-footer {
+  padding: 0px;
+}
+
 .bar-footer.with_button {
   height: 60px;
-  padding: 0px;
 
   .button-full {
     height: 100%;

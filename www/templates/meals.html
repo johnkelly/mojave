@@ -6,23 +6,16 @@
   <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <div class="card" ng-repeat="user_meal in user_meals">
-      <a class="item item-text-wrap">
-        {{ user_meal.meal.name }}
-        <button ng-click="deleteUserMeal(user_meal)">Discard</button>
-      </a>
-    </div>
+  <img src="img/key_lime_pie.jpg" />
+  <div class="bar bar-footer">
     <div class="row">
-      <form ng-submit="createUserMeal()">
-        <div class="col">
-          <select ng-model="newUserMeal.meal_id">
-            <option ng-repeat="meal in meals" value="{{meal.id}}">{{meal.name}}</option>
-          </select>
-        </div>
-        <div class="padding">
-          <button type="submit" class="button button-block button-positive">Create</button>
-        </div>
-      </form>
+      <div class="col">
+        <button class="button button-full button-assertive">Pass</button>
+      </div>
+      <div class="col">
+        <button class="button button-full button-positive">Eat</button>
+      </div>
     </div>
+  </div>
   </ion-content>
 </ion-view>
