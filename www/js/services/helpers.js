@@ -15,5 +15,11 @@ app.factory('Helpers', function(flash, $state, CurrentUser) {
       $state.go('app.meals');
     }
   }
+
+  root.shuffle_array = function(array) {
+    for(var j, x, i = array.length; i; j = Math.floor(Math.random() * i), x = array[--i], array[i] = array[j], array[j] = x);
+    return array;
+  }
+
   return root;
 });

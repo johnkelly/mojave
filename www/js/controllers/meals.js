@@ -1,30 +1,16 @@
-app.controller('MealsCtrl', function($scope, $state, UserMeal, Meal, CurrentUser, Helpers) {
-  $scope.newUserMeal = {}
+app.controller('MealsCtrl', function($scope, $state, AvailableMeal, Meal, CurrentUser, Helpers) {
 
-  $scope.user_meal_data = UserMeal.get({}, function() {
-    $scope.user_meals = $scope.user_meal_data.meals;
+  $scope.available_meal_data = AvailableMeal.get({}, function() {
+    $scope.available_meals = Helpers.shuffle_array($scope.available_meal_data.available_meals);
+    $scope.current_meal_index = 0
+    $scope.available_meal = $scope.available_meals[$scope.current_meal_index]
   });
 
-  $scope.meal_data = Meal.get({}, function() {
-    $scope.meals = $scope.meal_data.meals;
-  });
-
-  $scope.createUserMeal = function() {
-    UserMeal.save(
-      { meal: $scope.newUserMeal },
-      function(response) {
-        $scope.user_meals.push(response.users_meal);
-        $scope.newIngredient = {};
-      },
-      function(response) {
-        Helpers.ajax_error_handling(response);
-      }
-      );
-  }
-
-  $scope.deleteUserMeal = function(user_meal) {
-    UserMeal.remove({ id: user_meal.id }, function() {
-      $scope.user_meals.splice($scope.user_meals.indexOf(user_meal), 1);
-    })
+  $scope.nextAvailableMeal = function() {
+    if ($scope.current_meal_index < $scope.available_meals.length - 1) {
+      $scope.current_meal_index += 1
+    } else {
+      $scope.available_meal = null;
+    }
   }
 })

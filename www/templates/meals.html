@@ -6,16 +6,26 @@
   <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-  <img src="img/key_lime_pie.jpg" />
-  <div class="bar bar-footer">
+  <div ng-if="available_meal">
     <div class="row">
       <div class="col">
-        <button class="button button-full button-assertive">Pass</button>
-      </div>
-      <div class="col">
-        <button class="button button-full button-positive">Eat</button>
+        <h2> {{ available_meal.name }}</h2>
+        <h2> {{ available_meal.name }} details</h2>
       </div>
     </div>
+    <div class="bar bar-footer">
+      <div class="row">
+        <div class="col">
+          <button ng-click="nextAvailableMeal()" class="button button-full button-assertive">Pass</button>
+        </div>
+        <div class="col">
+          <button class="button button-full button-positive">Eat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="!available_meal">
+    <h1>No meals left :(</h1>
   </div>
   </ion-content>
 </ion-view>
