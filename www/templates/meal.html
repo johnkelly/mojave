@@ -1,0 +1,22 @@
+<ion-view title="Meal">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+  <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>{{ meal.name }}</h1>
+    <h3>Ingredients</h3>
+    <ul>
+      <li ng-repeat="ingredient in ingredients">
+      {{ ingredient.quantity }}&nbsp;{{ ingredient.measurement.name }}&nbsp;of&nbsp;{{ ingredient.food.name }}
+      </li>
+    </ul>
+    <h3>Directions</h3>
+      <ol>
+        <li ng-repeat="direction in directions | orderBy:['position']">{{ direction.name }}</li>
+      </ol>
+  </ion-content>
+</ion-view>
+

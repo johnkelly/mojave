@@ -69,6 +69,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('app.meal', {
+      url: "/meal/:id",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/meal.html",
+          controller: 'MealCtrl'
+        }
+      },
+      data: {
+        requiresLogin: true
+      }
+    })
+
     .state('app.kitchen', {
       url: "/kitchen",
       views: {
