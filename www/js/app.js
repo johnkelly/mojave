@@ -82,6 +82,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('app.log', {
+      url: "/log",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/log.html",
+          controller: 'LogCtrl'
+        }
+      },
+      data: {
+        requiresLogin: true
+      }
+    })
+
     .state('app.kitchen', {
       url: "/kitchen",
       views: {
