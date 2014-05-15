@@ -17,6 +17,10 @@
       <ol>
         <li ng-repeat="direction in directions | orderBy:['position']">{{ direction.name }}</li>
       </ol>
+    <h3>Appliances</h3>
+    <ul>
+      <li ng-repeat="appliance in appliances">{{ appliance.kind }}</li>
+    </ul>
   </ion-content>
 </ion-view>
 

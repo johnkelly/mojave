@@ -5,5 +5,6 @@ app.controller('MealCtrl', function($scope, $state, $stateParams, Meal) {
     $scope.meal = $scope.meal_data.meal;
     $scope.ingredients = $scope.meal.ingredients;
     $scope.directions = $scope.meal.directions;
+    $scope.appliances = $scope.meal.appliances;
   });
 })
