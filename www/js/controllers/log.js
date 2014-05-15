@@ -9,4 +9,8 @@ app.controller('LogCtrl', function($scope, $state, $stateParams, UserMeal) {
       $scope.users_meals.splice($scope.users_meals.indexOf(user_meal), 1);
     })
   }
+
+  $scope.viewMealDetails = function(meal) {
+    $state.go('app.meal',{ id: meal.id });
+  }
 })
