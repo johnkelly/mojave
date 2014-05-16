@@ -1,18 +1,7 @@
-This is an addon starter template for the [Ionic Framework](http://ionicframework.com/).
-
-## How to use this template
-
-*This template does not work on its own*. It is missing the Ionic library, and AngularJS.
-
-To use this, either create a new ionic project using the ionic node.js utility, or copy and paste this into an existing Cordova project and download a release of Ionic separately.
 
 ### With the Ionic tool:
 
 Take the name after `ionic-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myApp sidemenu
 ```
 
 Then, to run it, cd into `myApp` and run:
@@ -25,8 +14,35 @@ $ ionic emulate ios
 
 Substitute ios for android if not on a Mac, but if you can, the ios development toolchain is a lot easier to work with until you need to do anything custom to Android.
 
-## Demo
-http://plnkr.co/edit/0RXSDB?p=preview
 
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/contribute/#issues) to the main Ionic repository. On the other hand, pull requests are welcome here!
+#Mojave
+
+###Technology Stack
+* Ionic Framework
+* Angular JS
+* iOs
+* Android
+* Cordova
+
+###Tasks
+* Run 'ionic serve' to start a web version of Mojave at localhost:8100
+* Run sass --watch scss/app.scss:css/app.css to have sass compile to css as you edit scss files
+* Run 'ionic build ios' to compile Mojave into an iOs application
+* Run 'ionic emulate ios' to compile Mojave and start an iOs emulator
+* Change 'app.constant('Host', 'http://localhost:5000'); in app.js to use your local version of Kalahari'
+* Change 'app.constant('Host', 'https://kalahari.herokuapp.com/'); in app.js to use production Kalahari'
+
+###Setup Web App
+* sudo npm install -g ionic cordova
+* git clone https://github.com/limitingfactor/mojave.git
+* git clone https://github.com/limitingfactor/mojave.git
+
+
+###Setup iOS
+* Use a Mac
+* Install xCode
+* Run 'ionic platform add ios'
+
+###Setup Android
+* Several Steps (incomplete)
+* Run 'ionic platform add android'
