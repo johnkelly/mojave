@@ -4,6 +4,9 @@ var app = angular.module('mojave', ['ionic', 'ngResource', 'flash', 'LocalStorag
 
 app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
   $ionicPlatform.ready(function() {
+    setTimeout(function() {
+      navigator.splashscreen.hide();
+    }, 100);
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
