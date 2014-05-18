@@ -55,3 +55,18 @@ $assertive: #283B3B !default;
   }
 }
 
+h2 {
+  font-family: 'Lato', sans-serif;
+}
+
+.padded_content {
+  margin: 1em;
+  margin-bottom: 2em;
+}
+
+hr {
+  border-style: none;
+  border-bottom: .1em solid #dddddd;
+  color: #dddddd;
+}
+

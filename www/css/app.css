@@ -7305,3 +7305,15 @@ a.button {
   height: 60px; }
   .bar-footer.with_button .button-full {
     height: 100%; }
+
+h2 {
+  font-family: 'Lato', sans-serif; }
+
+.padded_content {
+  margin: 1em;
+  margin-bottom: 2em; }
+
+hr {
+  border-style: none;
+  border-bottom: .1em solid #dddddd;
+  color: #dddddd; }
