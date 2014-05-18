@@ -25,7 +25,7 @@ app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
   });
 })
 
-app.constant('Host', 'http://localhost:5000');
+app.constant('Host', 'https://kalahari.herokuapp.com');
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
