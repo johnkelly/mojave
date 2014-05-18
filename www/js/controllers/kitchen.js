@@ -1,6 +1,10 @@
 app.controller('KitchenCtrl', function($scope, $state, Appliance, Helpers) {
+  $scope.content_loaded = false;
+  Helpers.show_loading();
 
   $scope.appliance_data = Appliance.get({}, function() {
+    $scope.content_loaded = true;
+    Helpers.hide_loading();
     $scope.appliances = $scope.appliance_data.appliances;
   });
 

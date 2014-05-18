@@ -1,4 +1,7 @@
 app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measurement, Helpers, CurrentUser) {
+  Helpers.show_loading();
+  $scope.content_loaded = false;
+
   $scope.newIngredient = {}
   $scope.showNewIngredientView = false;
 
@@ -7,6 +10,8 @@ app.controller('IngredientsCtrl', function($scope, $state, Ingredient, Measureme
   }
 
   $scope.ingredient_data = Ingredient.get({}, function() {
+    $scope.content_loaded = true;
+    Helpers.hide_loading();
     $scope.ingredients = $scope.ingredient_data.ingredients;
   });
 

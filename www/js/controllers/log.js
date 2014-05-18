@@ -1,6 +1,10 @@
-app.controller('LogCtrl', function($scope, $state, $stateParams, UserMeal) {
+app.controller('LogCtrl', function($scope, $state, $stateParams, UserMeal, Helpers) {
+  Helpers.show_loading();
+  $scope.content_loaded = false;
 
   $scope.user_meal_data = UserMeal.get({}, function() {
+    $scope.content_loaded = true;
+    Helpers.hide_loading();
     $scope.users_meals = $scope.user_meal_data.meals;
   });
 

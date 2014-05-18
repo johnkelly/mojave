@@ -19,9 +19,11 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
   }
 
   $scope.signIn = function() {
+    Helpers.show_loading();
     Session.save(
       { session: $scope.signin },
       function(response) {
+        Helpers.hide_loading();
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.meals');
@@ -34,9 +36,11 @@ app.controller('WelcomeCtrl', function($scope, $state, Registration, Session, fl
   }
 
   $scope.signUp = function() {
+    Helpers.show_loading();
     Registration.save(
       { register: $scope.signup },
       function(response) {
+        Helpers.hide_loading();
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.kitchen');

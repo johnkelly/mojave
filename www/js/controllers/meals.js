@@ -1,6 +1,10 @@
 app.controller('MealsCtrl', function($scope, $state, AvailableMeal, Meal, UserMeal, CurrentUser, Helpers) {
+  $scope.content_loaded = false;
+  Helpers.show_loading();
 
   $scope.available_meal_data = AvailableMeal.get({}, function() {
+    $scope.content_loaded = true;
+    Helpers.hide_loading();
     $scope.available_meals = Helpers.shuffle_array($scope.available_meal_data.available_meals);
     $scope.current_meal_index = 0
     $scope.available_meal = $scope.available_meals[$scope.current_meal_index]
