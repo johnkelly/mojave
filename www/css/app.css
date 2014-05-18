@@ -7317,3 +7317,21 @@ hr {
   border-style: none;
   border-bottom: .1em solid #dddddd;
   color: #dddddd; }
+
+.push_footer {
+  height: 90%; }
+
+.italic {
+  font-style: italic; }
+
+.pos_fl {
+  float: left; }
+
+.pos_fr {
+  float: right; }
+
+.ml1pt5 {
+  margin-left: 1.5em; }
+
+.mr1pt5 {
+  margin-right: 1.5em; }
