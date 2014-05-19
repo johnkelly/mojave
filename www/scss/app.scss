@@ -72,7 +72,7 @@ hr {
 }
 
 .push_footer {
-  height: 90%;
+  height: 75%;
 }
 
 .italic {
@@ -105,4 +105,20 @@ hr {
 
 .large-loading-icon {
   font-size: 90px;
+}
+
+.tab-item {
+  max-width: none;
+
+  i, span {
+    font-size: 1.5em;
+  }
+}
+
+.scroll {
+  height: 100%;
+}
+
+.height_100p {
+  height: 100%;
 }

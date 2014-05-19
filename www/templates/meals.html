@@ -5,15 +5,28 @@
 <ion-nav-buttons side="right">
 <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
 </ion-nav-buttons>
-<ion-content class="has-header" ng-show="content_loaded">
-<div ng-if="available_meal">
-  <div class="row push_footer">
-    <div class="col">
-      <h2> {{ available_meal.name }}</h2>
+<ion-content class="has-header" ng-show="content_loaded" scroll="false">
+<div ng-if="available_meal" class="height_100p">
+  <div class="list card text-center push_footer">
+    <div class="item">
+      <h2>{{ available_meal.name }}</h2>
+    </div>
+    <div class="item item-body">
       <p>{{ available_meal.name }} details</p>
     </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <div class="tab-item" href="#">
+        <i class="icon ion-ios7-alarm-outline"></i>
+        <span>Total Time: 15 min</span>
+      </div>
+    </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <div class="tab-item" href="#">
+        <i class="icon ion-fork"></i>
+        <span>Calories: 460 Cal</span>
+      </div>
+    </div>
   </div>
-  <br><br>
   <div class="row">
     <div class="col">
       <button ng-click="nextAvailableMeal()" class="button button-large button-assertive button-outline pos_fl ml1pt5">I'll Pass</button>
@@ -23,7 +36,7 @@
     </div>
   </div>
 </div>
-<div ng-if="!available_meal">
+<div ng-if="!available_meal" class="height_100p">
   <h2>No meals left :(</h2>
 </div>
 </ion-content>
