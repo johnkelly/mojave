@@ -9825,6 +9825,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   background-size: auto 100%;
   min-height: 100%; }
   .splash_back .welcome-information {
+    height: 100%;
     text-align: center;
     padding: 0 1%; }
     .splash_back .welcome-information h1 {
@@ -9844,6 +9845,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 h2 {
   font-family: 'Lato', sans-serif; }
+
+.content {
+  height: 100%; }
 
 .padded_content {
   margin: 1em;
@@ -9874,6 +9878,11 @@ hr {
 
 .slide_div {
   margin: 5em 1em; }
+  .slide_div h3 {
+    line-height: 1.5; }
+
+.slider {
+  height: 75%; }
 
 .slider i {
   color: #ffffff; }

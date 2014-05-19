@@ -30,6 +30,7 @@ $assertive: #283B3B !default;
   min-height:100%;
 
   .welcome-information {
+    height: 100%;
     text-align: center;
     padding: 0 1%;
 
@@ -58,6 +59,10 @@ $assertive: #283B3B !default;
 
 h2 {
   font-family: 'Lato', sans-serif;
+}
+
+.content {
+  height: 100%;
 }
 
 .padded_content {
@@ -97,6 +102,14 @@ hr {
 
 .slide_div {
   margin: 5em 1em;
+
+  h3 {
+    line-height: 1.5;
+  }
+}
+
+.slider {
+  height: 75%;
 }
 
 .slider i {
