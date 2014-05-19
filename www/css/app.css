@@ -7294,7 +7294,7 @@ a.button {
     .splash_back .welcome-information h1 {
       color: #ffffff;
       font-family: 'Lobster', sans-serif; }
-    .splash_back .welcome-information h2 {
+    .splash_back .welcome-information h2, .splash_back .welcome-information h3 {
       color: #ffffff;
       font-family: 'Lato', sans-serif; }
 
