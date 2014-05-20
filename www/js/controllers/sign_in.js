@@ -7,6 +7,10 @@ app.controller('SignInCtrl', function($scope, $state, Session, flash, Helpers, C
     $state.go('welcome');
   }
 
+  $scope.go_to_sign_up = function() {
+    $state.go('sign_up');
+  }
+
   $scope.signIn = function() {
     Helpers.show_loading();
     Session.save(

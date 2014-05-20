@@ -9811,7 +9811,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #flash-messages .error {
   background: red;
-  color: white; }
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 5px; }
 
 #flash-messages .success {
   background: green;

@@ -6,16 +6,22 @@
       </button>
     </div>
     <h1 class="title">Sign In</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="go_to_sign_up()">Sign Up</button>
+    </div>
   </ion-header-bar>
   <ion-content class="splash_back" scroll="false">
-    <div class="content has-header">
+  <div class="text-center"><flash:messages></flash:messages></div>
+    <div class="content">
       <form ng-submit="signIn()">
         <div class="list list-inset">
           <label class="item item-input">
-            <input type="email" placeholder="Email" ng-model="signin.email" required />
+            <span class="input-label">Email</span>
+            <input type="email" placeholder="test@example.com" ng-model="signin.email" autofocus required />
           </label>
           <label class="item item-input">
-            <input type="password" placeholder="Password" ng-model="signin.password" required />
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="signin.password" required />
           </label>
         </div>
         <div class="padding">
