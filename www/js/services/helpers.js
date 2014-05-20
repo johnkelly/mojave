@@ -1,18 +1,18 @@
-app.factory('Helpers', function(flash, $state, CurrentUser, $ionicLoading) {
+app.factory('Helpers', function($state, CurrentUser, $ionicLoading, $ionicPopup) {
   var root = {};
 
   root.ajax_error_handling = function(response) {
     this.hide_loading();
     if(response.status == 422){
-      flash([{ level: 'error', text: response.data.errors.join(" ") }]);
+      this.showAlert(response.data.errors.join(" "));
     } else {
-      flash([{ level: 'error', text: "We're sorry a technical error has occured." }]);
+      this.showAlert("We're sorry a technical error has occured.");
     }
   }
 
   root.redirect_if_authenticated = function(response) {
     if(CurrentUser.isAuthenticated()){
-      flash([{ level: 'error', text: "You are already signed in." }]);
+      this.showAlert("You are already signed in.");
       $state.go('app.meals');
     }
   }
@@ -28,6 +28,13 @@ app.factory('Helpers', function(flash, $state, CurrentUser, $ionicLoading) {
 
   root.hide_loading = function() {
     $ionicLoading.hide();
+  }
+
+  root.showAlert = function(message) {
+    var alertPopup = $ionicPopup.alert({
+      title: message,
+      template: ''
+    });
   }
 
   return root;

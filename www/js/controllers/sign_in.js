@@ -7,10 +7,6 @@ app.controller('SignInCtrl', function($scope, $state, Session, flash, Helpers, C
     $state.go('welcome');
   }
 
-  $scope.go_to_sign_up = function() {
-    $state.go('sign_up');
-  }
-
   $scope.signIn = function() {
     Helpers.show_loading();
     Session.save(
@@ -20,7 +16,6 @@ app.controller('SignInCtrl', function($scope, $state, Session, flash, Helpers, C
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.meals');
-        flash([{ level: 'success', text: "Welcome Back!" }]);
       },
       function(response) {
         Helpers.ajax_error_handling(response);

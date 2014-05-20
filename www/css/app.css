@@ -9903,3 +9903,9 @@ hr {
 
 .height_100p {
   height: 100%; }
+
+.text-white {
+  color: #fff; }
+
+.popup-title {
+  padding: 10px; }

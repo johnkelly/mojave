@@ -2,16 +2,15 @@
   <ion-header-bar align-title="center" class="bar-light">
     <div class="buttons">
       <button class="button button-clear" ng-click="returnToWelcome()">
-        <i class="icon ion-chevron-left"></i> Back
+        <i class="icon ion-arrow-left-c"></i>
       </button>
     </div>
-    <h1 class="title">Sign In</h1>
+    <h1 class="title">Welcome Back</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="go_to_sign_up()">Sign Up</button>
+      <button type="submit" class="button button-positive" ng-click="signIn()">Sign In</button>
     </div>
   </ion-header-bar>
   <ion-content class="splash_back" scroll="false">
-  <div class="text-center"><flash:messages></flash:messages></div>
     <div class="content">
       <form ng-submit="signIn()">
         <div class="list list-inset">
@@ -24,10 +23,12 @@
             <input type="password" ng-model="signin.password" required />
           </label>
         </div>
-        <div class="padding">
-          <button type="submit" class="button button-block button-positive">Sign In</button>
-        </div>
       </form>
+      <div class="row">
+        <div class="col text-center text-white">
+          <p>Forget something? Reset your password.</p>
+        </div>
+      </div>
     </div>
   </ion-content>
 </ion-view>
