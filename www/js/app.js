@@ -1,6 +1,6 @@
 // Ionic Starter App
 
-var app = angular.module('mojave', ['ionic', 'ngResource', 'flash', 'LocalStorageModule'])
+var app = angular.module('mojave', ['ionic', 'ngResource', 'LocalStorageModule'])
 
 app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
   $ionicPlatform.ready(function() {

@@ -1,39 +1,48 @@
 <ion-view title="Create Account" hide-nav-bar="true" >
   <ion-header-bar align-title="center" class="bar-light">
     <div class="buttons">
-      <button class="button button-clear" ng-click="returnToWelcome()">
+      <button class="button button-clear" ng-click="returnBack()">
         <i class="icon ion-arrow-left-c"></i>
       </button>
     </div>
     <h1 class="title">Create Account</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="go_to_sign_in()">Sign In</button>
+      <button type="submit" class="button button-positive" ng-show="show_step_two" ng-click="signUp()">Sign Up</button>
+      <button type="submit" class="button button-positive" ng-hide="show_step_two" ng-click="toggleShowStepTwo()">Next</button>
     </div>
   </ion-header-bar>
   <ion-content class="splash_back" scroll="false">
-    <div class="text-center"><flash:messages></flash:messages></div>
-    <div class="content">
+    <div class="content animated fadeInUp">
       <form ng-submit="signUp()">
-        <div class="list list-inset">
-          <label class="item item-input">
-            <span class="input-label">First Name</span>
-            <input type="text" placeholder="first name" ng-model="signup.first_name" required />
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Email</span>
-            <input type="email" placeholder="test@example.com" ng-model="signup.email" required />
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Password</span>
-            <input type="password" placeholder="at least 8 characters" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." required />
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Confirm Password</span>
-            <input type="password" placeholder="at least 8 characters" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
-          </label>
+        <div ng-hide="show_step_two">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <span class="input-label">First Name</span>
+              <input type="text" placeholder="Your first name" ng-model="signup.first_name" autofocus required />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Email</span>
+              <input type="email" placeholder="test@example.com" ng-model="signup.email" required />
+            </label>
+          </div>
         </div>
-        <div class="padding">
-          <button type="submit" class="button button-block button-positive">Sign Up</button>
+        <div ng-show="show_step_two" class="animated fadeInRightBig">
+          <div class="list list-inset">
+            <label class="item item-input">
+              <span class="input-label">Password</span>
+              <input type="password" placeholder="at least 8 characters" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." autofocus required />
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Confirm Password</span>
+              <input type="password" placeholder="at least 8 characters" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
+            </label>
+          </div>
+          <div class="row">
+            <div class="col text-center text-white">
+              <p>By signing up, you agree to the</p>
+              <p>Terms of Service & Privacy Policy</p>
+            </div>
+          </div>
         </div>
       </form>
     </div>

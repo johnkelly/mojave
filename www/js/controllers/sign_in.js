@@ -1,4 +1,4 @@
-app.controller('SignInCtrl', function($scope, $state, Session, flash, Helpers, CurrentUser) {
+app.controller('SignInCtrl', function($scope, $state, Session, Helpers, CurrentUser) {
   Helpers.redirect_if_authenticated()
 
   $scope.signin = { email: "", password: ""}

@@ -9909,3 +9909,6 @@ hr {
 
 .popup-title {
   padding: 10px; }
+
+label.item.item-input {
+  max-height: 2.25em; }

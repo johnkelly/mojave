@@ -1,14 +1,19 @@
-app.controller('SignUpCtrl', function($scope, $state, Registration, flash, Helpers, CurrentUser) {
+app.controller('SignUpCtrl', function($scope, $state, Registration, Helpers, CurrentUser) {
   Helpers.redirect_if_authenticated()
 
-  $scope.signup = {}
+  $scope.signup = { first_name: "", email: "", password: "", password_confirmation: "" }
+  $scope.show_step_two = false;
 
-  $scope.returnToWelcome = function() {
-    $state.go('welcome');
+  $scope.returnBack = function() {
+    if($scope.show_step_two){
+      $scope.toggleShowStepTwo();
+    } else {
+      $state.go('welcome');
+    }
   }
 
-  $scope.go_to_sign_in = function() {
-    $state.go('sign_in');
+  $scope.toggleShowStepTwo = function() {
+    $scope.show_step_two = !$scope.show_step_two;
   }
 
   $scope.signUp = function() {
@@ -20,7 +25,6 @@ app.controller('SignUpCtrl', function($scope, $state, Registration, flash, Helpe
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.first_name);
         $state.go('app.kitchen');
-        flash([{ level: 'success', text: "Welcome!" }]);
       },
       function(response) {
         Helpers.ajax_error_handling(response);
