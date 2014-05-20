@@ -1,0 +1,33 @@
+<ion-view title="Create Account" hide-nav-bar="true" >
+  <ion-header-bar align-title="center" class="bar-light">
+    <div class="buttons">
+      <button class="button button-clear" ng-click="returnToWelcome()">
+        <i class="icon ion-chevron-left"></i> Back
+      </button>
+    </div>
+    <h1 class="title">Create Account</h1>
+  </ion-header-bar>
+  <ion-content class="splash_back" scroll="false">
+    <div class="content has-header">
+      <form ng-submit="signUp()">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="email" placeholder="email" ng-model="signup.email" required />
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="password" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." required />
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="password confirmation" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="first name" ng-model="signup.first_name" required />
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

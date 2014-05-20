@@ -1,77 +1,36 @@
 <ion-view title="Welcome" hide-nav-bar="true" >
-<div class="row">
-  <div class="col"><flash:messages></flash:messages></div>
-</div>
-<ion-content class="splash_back " scroll="false">
-<div class="content has-header">
-  <div class="welcome-information" ng-hide="showSignIn || showSignUp">
-    <ion-slide-box does-continue="true" >
-      <ion-slide>
-        <div class="slide_div animated fadeInUpBig">
-          <h1>Mojave</h1>
-          <h3>A personal assistant for your kitchen.</h3>
+  <ion-content class="splash_back " scroll="false">
+    <div class="content has-header">
+      <div class="welcome-information">
+        <ion-slide-box does-continue="true">
+          <ion-slide>
+          <div class="slide_div animated fadeInUpBig">
+            <h1>Mojave</h1>
+            <h3>A personal assistant for your kitchen.</h3>
+          </div>
+          </ion-slide>
+          <ion-slide>
+          <div class="slide_div">
+            <h1>Save Money</h1>
+            <h3>Mojave presents you with a menu of meal ideas based on your current ingredients and appliances so you can save trips to the grocery store.</h3>
+          </div>
+          </ion-slide>
+          <ion-slide>
+          <div class="slide_div">
+            <h1>Eat Well</h1>
+            <h3>Mojave curates recipes and only provides recipes that have been certified to be delicious.</h3>
+          </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="row">
+          <div class="col">
+            <button ng-click="go_to_sign_up()" class="button button-large button-light button-clear">Sign Up</button>
+          </div>
+          <div class="col">
+            <button ng-click="go_to_sign_in()" class="button button-large button-light button-clear">Sign In</button>
+          </div>
         </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="slide_div">
-          <h1>Save Money</h1>
-          <h3>Mojave presents you with a menu of meal ideas based on your current ingredients and appliances so you can save trips to the grocery store.</h3>
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="slide_div">
-          <h1>Eat Well</h1>
-          <h3>Mojave curates recipes and only provides recipes that have been certified to be delicious.</h3>
-        </div>
-      </ion-slide>
-    </ion-slide-box>
-    <div class="row">
-      <div class="col">
-        <button class="button button-large button-light button-clear" ng-click="toggleShowSignUp()">Sign Up</button>
       </div>
-      <div class="col">
-        <button class="button button-large button-light button-clear" ng-click="toggleShowSignIn()">Sign In</button>
-      </div>
     </div>
-  </div>
-<div ng-show="showSignIn">
-  <form ng-submit="signIn()">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <input type="email" placeholder="Email" ng-model="signin.email" required />
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password" ng-model="signin.password" required />
-      </label>
-    </div>
-    <div class="padding">
-      <button type="submit" class="button button-block button-positive">Sign In</button>
-      <button type="reset" ng-click ="toggleShowSignIn()" class="button button-block button-assertive">Cancel</button>
-    </div>
-  </form>
-</div>
-
-<div ng-show="showSignUp">
-  <form ng-submit="signUp()">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <input type="email" placeholder="email" ng-model="signup.email" required />
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="password" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." required />
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="password confirmation" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="first name" ng-model="signup.first_name" required />
-      </label>
-    </div>
-    <div class="padding">
-      <button type="submit" class="button button-block button-positive">Sign Up</button>
-      <button type="reset" ng-click ="toggleShowSignUp()" class="button button-block button-assertive">Cancel</button>
-    </div>
-  </form>
-</div>
-</ion-content>
+  </ion-content>
 </ion-view>

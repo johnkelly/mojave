@@ -41,6 +41,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('sign_up', {
+      url: "/sign_up",
+      templateUrl: "templates/sign_up.html",
+      controller: "SignUpCtrl",
+      data: {
+        requiresLogin: false
+      }
+    })
+
+    .state('sign_in', {
+      url: "/sign_in",
+      templateUrl: "templates/sign_in.html",
+      controller: "SignInCtrl",
+      data: {
+        requiresLogin: false
+      }
+    })
+
     .state('app', {
       url: "/app",
       abstract: true,
