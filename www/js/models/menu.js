@@ -1,4 +1,4 @@
-app.factory('AvailableMeal', function ($resource, CurrentUser, Host) {
+app.factory('Menu', function ($resource, CurrentUser, Host) {
   return $resource(Host + '/user/available_meals/:id',
     { id: '@id' },
     {

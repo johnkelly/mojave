@@ -1,42 +1,43 @@
-<ion-side-menus>
-  <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-balanced">
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
-  </ion-pane>
-
-  <ion-side-menu side="left">
-    <header class="bar bar-header bar-balanced">
-      <h1 class="title">Mojave</h1>
-    </header>
-    <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close href="#/app/meals">
-          Menu
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/log">
-           Meals
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/kitchen">
-          Kitchen
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/ingredients">
-           Ingredients
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
-
-  <ion-side-menu side="right">
-    <header class="bar bar-header bar-balanced">
-    <h1 class="title">{{ first_name() }}'s Account</h1>
-    </header>
-    <ion-content class="has-header">
-      <ion-list>
-        <ion-item nav-clear menu-close ng-click="signOut()">
-          Sign Out
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
-</ion-side-menus>
+<ion-view title="Menu">
+<ion-nav-buttons side="left">
+<button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+<ion-nav-buttons side="right">
+<button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
+</ion-nav-buttons>
+<ion-content class="has-header" ng-show="content_loaded" scroll="false">
+<div ng-if="current_menu_item" class="height_100p">
+  <div class="list card text-center push_footer">
+    <div class="item">
+      <h2>{{ current_menu_item.name }}</h2>
+    </div>
+    <div class="item item-body">
+      <p>{{ current_menu_item.name }} details</p>
+    </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <div class="tab-item" href="#">
+        <i class="icon ion-ios7-alarm-outline"></i>
+        <span>Total Time: 15 min</span>
+      </div>
+    </div>
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <div class="tab-item" href="#">
+        <i class="icon ion-fork"></i>
+        <span>Calories: 460 Cal</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button ng-click="nextMenuItem()" class="button button-large button-assertive button-outline pos_fl ml1pt5">I'll Pass</button>
+    </div>
+    <div class="col">
+      <button ng-click="eat()" class="button button-large button-positive button-outline pos_fr mr1pt5">Pick It!</button>
+    </div>
+  </div>
+</div>
+<div ng-if="!current_menu_item" class="height_100p">
+  <h2>No meals left :(</h2>
+</div>
+</ion-content>
+</ion-view>

@@ -15,7 +15,7 @@ app.controller('SignInCtrl', function($scope, $state, Session, Helpers, CurrentU
         Helpers.hide_loading();
         var user = response.user;
         CurrentUser.store(user.auth_token, user.email, user.first_name);
-        $state.go('app.meals');
+        $state.go('app.menu');
       },
       function(response) {
         Helpers.ajax_error_handling(response);

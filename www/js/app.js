@@ -62,7 +62,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/menu.html",
+      templateUrl: "templates/app.html",
       controller: 'AppCtrl'
     })
 
@@ -79,12 +79,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.meals', {
-      url: "/meals",
+    .state('app.menu', {
+      url: "/menu",
       views: {
         'menuContent' :{
-          templateUrl: "templates/meals.html",
-          controller: 'MealsCtrl'
+          templateUrl: "templates/menu.html",
+          controller: 'MenuCtrl'
         }
       },
       data: {
@@ -105,12 +105,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.log', {
-      url: "/log",
+    .state('app.meals', {
+      url: "/meals",
       views: {
         'menuContent' :{
-          templateUrl: "templates/log.html",
-          controller: 'LogCtrl'
+          templateUrl: "templates/meals.html",
+          controller: 'MealsCtrl'
         }
       },
       data: {

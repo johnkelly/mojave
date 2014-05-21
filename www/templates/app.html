@@ -1,0 +1,42 @@
+<ion-side-menus>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-balanced">
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-balanced">
+      <h1 class="title">Mojave</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/menu">
+          Menu
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/meals">
+           Meals
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/kitchen">
+          Kitchen
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/ingredients">
+           Ingredients
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu side="right">
+    <header class="bar bar-header bar-balanced">
+    <h1 class="title">{{ first_name() }}'s Account</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close ng-click="signOut()">
+          Sign Out
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

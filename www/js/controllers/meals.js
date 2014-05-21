@@ -1,33 +1,20 @@
-app.controller('MealsCtrl', function($scope, $state, AvailableMeal, Meal, UserMeal, CurrentUser, Helpers) {
-  $scope.content_loaded = false;
+app.controller('MealsCtrl', function($scope, $state, $stateParams, UserMeal, Helpers) {
   Helpers.show_loading();
+  $scope.content_loaded = false;
 
-  $scope.available_meal_data = AvailableMeal.get({}, function() {
+  $scope.user_meal_data = UserMeal.get({}, function() {
     $scope.content_loaded = true;
     Helpers.hide_loading();
-    $scope.available_meals = Helpers.shuffle_array($scope.available_meal_data.available_meals);
-    $scope.current_meal_index = 0;
-    $scope.available_meal = $scope.available_meals[$scope.current_meal_index];
+    $scope.users_meals = $scope.user_meal_data.meals;
   });
 
-  $scope.nextAvailableMeal = function() {
-    if ($scope.current_meal_index < $scope.available_meals.length - 1) {
-      $scope.current_meal_index += 1;
-      $scope.available_meal = $scope.available_meals[$scope.current_meal_index];
-    } else {
-      $scope.available_meal = null;
-    }
+  $scope.deleteUserMeal = function(user_meal) {
+    UserMeal.remove({ id: user_meal.id }, function() {
+      $scope.users_meals.splice($scope.users_meals.indexOf(user_meal), 1);
+    })
   }
 
-  $scope.eat = function() {
-    UserMeal.save(
-      { meal: { meal_id: $scope.available_meal.id }},
-      function(response) {
-        $state.go('app.meal',{ id: $scope.available_meal.id });
-      },
-      function(response) {
-        Helpers.ajax_error_handling(response);
-      }
-    );
+  $scope.viewMealDetails = function(meal) {
+    $state.go('app.meal',{ id: meal.id });
   }
 })
