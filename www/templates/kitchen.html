@@ -5,13 +5,19 @@
   <ion-nav-buttons side="right">
   <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header" ng-show="content_loaded">
+  <div class="bar bar-subheader text-center">
+    <p>Select the kitchen equipment you own.</p>
+  </div>
+  <ion-content ng-show="content_loaded" class="has-subheader">
     <ul class="list">
-      <li ng-repeat="appliance in appliances" class="item item-checkbox">
-        <label class="checkbox">
-          <input type="checkbox" ng-click=toggleAppliance(appliance) ng-checked="appliance.owned" />
-        </label>
-        {{ appliance.kind }}
+      <li class="item item-toggle" ng-repeat="appliance in appliances | orderBy:['kind']">
+      <span>{{ appliance.kind }}</span>
+      <label class="toggle toggle-balanced">
+        <input type="checkbox" ng-click=toggleAppliance(appliance) ng-checked="appliance.owned" />
+        <div class="track">
+          <div class="handle"></div>
+        </div>
+      </label>
       </li>
     </ul>
   </ion-content>

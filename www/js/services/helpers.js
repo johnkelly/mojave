@@ -12,7 +12,6 @@ app.factory('Helpers', function($state, CurrentUser, $ionicLoading, $ionicPopup)
 
   root.redirect_if_authenticated = function(response) {
     if(CurrentUser.isAuthenticated()){
-      this.showAlert("You are already signed in.");
       $state.go('app.meals');
     }
   }
