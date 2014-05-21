@@ -9912,3 +9912,7 @@ hr {
 
 label.item.item-input {
   max-height: 2.25em; }
+
+.reset-password {
+  vertical-align: middle;
+  font-weight: bold; }
