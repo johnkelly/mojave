@@ -12,18 +12,12 @@
       <h2>{{ current_menu_item.name }}</h2>
     </div>
     <div class="item item-body">
-      <p>{{ current_menu_item.name }} details</p>
+      <p>{{ current_menu_item.description }}</p>
     </div>
     <div class="item tabs tabs-secondary tabs-icon-left">
       <div class="tab-item" href="#">
         <i class="icon ion-ios7-alarm-outline"></i>
-        <span>Total Time: 15 min</span>
-      </div>
-    </div>
-    <div class="item tabs tabs-secondary tabs-icon-left">
-      <div class="tab-item" href="#">
-        <i class="icon ion-fork"></i>
-        <span>Calories: 460 Cal</span>
+        <span>Total Time: {{ current_menu_item.duration }} minutes</span>
       </div>
     </div>
   </div>
