@@ -1,0 +1,43 @@
+<ion-view title="Add Ingredients">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon icon ion-arrow-left-c" ng-click="go_to_ingredients()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-ios7-person"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader text-center">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Type Food Name and Select Below" ng-change="searchFood()" ng-model="search.food_name" autofocus>
+    </label>
+  </div>
+  <ion-content class="has-subheader" scroll="true" ng-show="content_loaded">
+    <div class="list">
+      <div ng-repeat="food in foods">
+        <div class="item" ng-click="toggleSelectFood(food.foods)">
+          <i class="icon ion-plus-circled"></i>
+          <span>{{ food.foods.name }}</span>
+        </div>
+        <div class="item" ng-if="food.foods.selected">
+          <form ng-submit="createIngredient(food.foods)">
+            <div class="row row-center">
+              <div class="col col-75">
+                <label class="item item-input">
+                  <span class="input-label">Quantity</span>
+                  <input type="text" ng-model="food.foods.quantity" required />
+                </label>
+                <label class="item item-input">
+                  <select ng-model="food.foods.measurement_id" ng-options="measurement.id as measurement.name for measurement in measurements">
+                  </select>
+                </label>
+              </div>
+              <div class="col">
+                <button type="submit" class="button button-block button-balanced">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

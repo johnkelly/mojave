@@ -28,6 +28,7 @@ app.run(function($ionicPlatform, $rootScope, $state, CurrentUser) {
 })
 
 app.constant('Host', 'https://kalahari.herokuapp.com');
+// app.constant('Host', 'http://localhost:5000');
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -72,6 +73,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'menuContent' :{
           templateUrl: "templates/ingredients.html",
           controller: 'IngredientsCtrl'
+        }
+      },
+      data: {
+        requiresLogin: true
+      }
+    })
+
+    .state('app.add_ingredient', {
+      url: "/ingredients/new",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/add_ingredient.html",
+          controller: 'AddIngredientsCtrl'
         }
       },
       data: {

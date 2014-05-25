@@ -1,5 +1,5 @@
-app.factory('Menu', function ($resource, CurrentUser, Host) {
-  return $resource(Host + '/user/available_meals/:id',
+app.factory('Food', function ($resource, CurrentUser, Host) {
+  return $resource(Host + '/foods',
     { id: '@id' },
     {
       'get':    { method:'GET', headers: CurrentUser.authorization_header() },

@@ -16,11 +16,11 @@
       <form ng-submit="signUp()">
         <div ng-hide="show_step_two">
           <div class="list list-inset">
-            <label class="item item-input">
+            <label class="item item-input limit-height">
               <span class="input-label">First Name</span>
               <input type="text" placeholder="Your first name" ng-model="signup.first_name" autofocus required />
             </label>
-            <label class="item item-input">
+            <label class="item item-input limit-height">
               <span class="input-label">Email</span>
               <input type="email" placeholder="test@example.com" ng-model="signup.email" required />
             </label>
@@ -28,11 +28,11 @@
         </div>
         <div ng-show="show_step_two" class="animated fadeInUp">
           <div class="list list-inset">
-            <label class="item item-input">
+            <label class="item item-input limit-height">
               <span class="input-label">Password</span>
               <input type="password" placeholder="at least 8 characters" ng-model="signup.password" pattern=".{8,}" title="Password must be at least 8 characters." autofocus required />
             </label>
-            <label class="item item-input">
+            <label class="item item-input limit-height">
               <span class="input-label">Confirm Password</span>
               <input type="password" placeholder="at least 8 characters" ng-model="signup.password_confirmation" pattern=".{8,}" title="Password must be at least 8 characters." required />
             </label>
