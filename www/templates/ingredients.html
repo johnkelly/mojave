@@ -18,11 +18,33 @@
           <button class="button button-block button-balanced" ng-click="go_to_add_ingredient()">Add Ingredients</button>
         </div>
       </div>
-      <ion-list show-delete="true">
+      <ion-list >
       <ion-item ng-repeat="ingredient in ingredients | ingredientFilter:query | orderBy:['food.name']">
-      {{ ingredient.food.name }}
-      {{ ingredient.quantity }} {{ingredient.measurement.name }}
-      <ion-delete-button class="ion-android-trash button icon button-icon" ng-click="deleteIngredient(ingredient)"></ion-delete-button>
+        <div class="row row-center">
+          <div class="col col-90">
+            <div ng-hide="ingredient.selected">
+              {{ ingredient.quantity }} {{ingredient.measurement.name }}
+              {{ ingredient.food.name }}
+            </div>
+            <div ng-if="ingredient.selected">
+              <label class="item item-input">
+                <span class="input-label">Quantity</span>
+                <input type="text" ng-model="ingredient.quantity" ng-change="updateIngredient(ingredient)" required />
+              </label>
+              <label class="item item-input">
+                <select ng-model="ingredient.measurement" ng-options="measurement.name for measurement in measurements track by measurement.id" ng-change="updateIngredient(ingredient)">
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="col">
+            <button class="button button-block button-balanced" ng-click="toggleIngredient(ingredient)" ng-hide="ingredient.selected">Edit</button>
+            <button class="button button-block button-balanced" ng-click="toggleIngredient(ingredient)" ng-if="ingredient.selected">Done</button>
+          </div>
+        </div>
+        <ion-option-button class="button-assertive" ng-click="deleteIngredient(ingredient)">
+          <i class="icon ion-close-round"></i>
+        </ion-option-button>
       </ion-item>
       </ion-list>
     </div>
