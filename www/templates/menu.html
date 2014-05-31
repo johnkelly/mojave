@@ -36,9 +36,16 @@
     </div>
   </div>
 </div>
-<div ng-if="!current_menu_item" class="height_100p">
+<div ng-if="!current_menu_item && menu_items.length == 0" class="height_100p">
+  <div class="no_meals">
+    <h2>Your menu is empty. :(</h2>
+    <h5>Add ingredients and kitchen items and your menu will automatically suggest meals for you.</h5>
+  </div>
+</div>
+<div ng-if="!current_menu_item && menu_items.length > 0" class="height_100p">
   <div class="no_meals">
     <h2>No meals left :(</h2>
+      <button class="button button-block button-balanced" ng-click="restart()">Restart</button>
   </div>
 </div>
 </ion-content>

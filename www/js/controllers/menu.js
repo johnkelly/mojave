@@ -30,4 +30,9 @@ app.controller('MenuCtrl', function($scope, $state, Menu, Meal, UserMeal, Curren
       }
     );
   }
+
+  $scope.restart = function() {
+    $scope.current_meal_index = 0;
+    $scope.current_menu_item = $scope.menu_items[$scope.current_meal_index];
+  }
 })

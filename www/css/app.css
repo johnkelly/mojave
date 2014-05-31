@@ -10010,3 +10010,7 @@ label.item.item-input.limit-height {
   .no_ingredients button {
     width: 10em;
     margin: 22em auto !important; }
+
+.no_meals button {
+  width: 10em;
+  margin: 22em auto !important; }
