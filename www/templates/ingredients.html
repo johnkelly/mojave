@@ -48,8 +48,9 @@
       </ion-item>
       </ion-list>
     </div>
-    <div ng-hide="ingredients">
+    <div ng-hide="ingredients" class="no_ingredients">
       <h2>No ingredients :(</h2>
+      <button class="button button-block button-balanced" ng-click="go_to_add_ingredient()">Add Ingredients</button>
     </div>
   </ion-content>
 </ion-view>

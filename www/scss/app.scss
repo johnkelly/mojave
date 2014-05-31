@@ -156,10 +156,19 @@ label.item.item-input.limit-height {
   font-weight: bold;
 }
 
-.no_meals {
+.no_meals, .no_ingredients {
   background: url('../img/empty_plate.png') no-repeat center 45%;
   background-size: 90% auto;
   height: 100%;
   text-align: center;
   padding-top: 4em;
+}
+
+.no_ingredients {
+  background-image: url('../img/empty_ingredients.png');
+
+  button {
+    width: 10em;
+    margin: 22em auto !important;
+  }
 }
