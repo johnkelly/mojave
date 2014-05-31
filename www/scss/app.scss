@@ -155,3 +155,11 @@ label.item.item-input.limit-height {
   vertical-align: middle;
   font-weight: bold;
 }
+
+.no_meals {
+  background: url('../img/empty_plate.png') no-repeat center 45%;
+  background-size: 90% auto;
+  height: 100%;
+  text-align: center;
+  padding-top: 4em;
+}
