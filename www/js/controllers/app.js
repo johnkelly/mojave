@@ -4,7 +4,6 @@ app.controller('AppCtrl', function($scope, CurrentUser) {
   }
 
   $scope.signOut = function() {
-    CurrentUser.delete_all();
-    location.reload()
+    CurrentUser.sign_out();
   }
 })

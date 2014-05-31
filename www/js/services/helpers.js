@@ -5,6 +5,8 @@ app.factory('Helpers', function($state, CurrentUser, $ionicLoading, $ionicPopup)
     this.hide_loading();
     if(response.status == 422){
       this.showAlert(response.data.errors.join(" "));
+    } else if(response.status == 401) {
+      CurrentUser.sign_out();
     } else {
       this.showAlert("We're sorry a technical error has occured.");
     }
@@ -12,7 +14,7 @@ app.factory('Helpers', function($state, CurrentUser, $ionicLoading, $ionicPopup)
 
   root.redirect_if_authenticated = function(response) {
     if(CurrentUser.isAuthenticated()){
-      $state.go('app.menu');
+      $state.go('app.meals');
     }
   }
 

@@ -6,7 +6,7 @@ app.controller('MealsCtrl', function($scope, $state, $stateParams, UserMeal, Hel
     $scope.content_loaded = true;
     Helpers.hide_loading();
     $scope.users_meals = $scope.user_meal_data.meals;
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.deleteUserMeal = function(user_meal) {
     UserMeal.remove({ id: user_meal.id }, function() {

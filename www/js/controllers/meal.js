@@ -11,5 +11,5 @@ app.controller('MealCtrl', function($scope, $state, $stateParams, Meal, Helpers)
     $scope.ingredients = $scope.meal.ingredients;
     $scope.directions = $scope.meal.directions;
     $scope.appliances = $scope.meal.appliances;
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 })

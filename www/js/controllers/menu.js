@@ -8,7 +8,7 @@ app.controller('MenuCtrl', function($scope, $state, Menu, Meal, UserMeal, Curren
     $scope.menu_items = Helpers.shuffle_array($scope.menu_data.available_meals);
     $scope.current_meal_index = 0;
     $scope.current_menu_item = $scope.menu_items[$scope.current_meal_index];
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.nextMenuItem = function() {
     if ($scope.current_meal_index < $scope.menu_items.length - 1) {

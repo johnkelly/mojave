@@ -13,7 +13,7 @@ app.controller('AddIngredientsCtrl', function($scope, $state, $timeout, Food, In
     $scope.measurements = $scope.measurement_data.measurements;
     $scope.content_loaded = true;
     Helpers.hide_loading();
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.searchFood = function(release) {
     if(foodSearchTimeout != null){

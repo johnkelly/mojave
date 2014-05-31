@@ -6,7 +6,7 @@ app.controller('KitchenCtrl', function($scope, $state, Appliance, Helpers) {
     $scope.content_loaded = true;
     Helpers.hide_loading();
     $scope.appliances = $scope.appliance_data.appliances;
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.toggleAppliance = function(appliance) {
     if(appliance.owned) {

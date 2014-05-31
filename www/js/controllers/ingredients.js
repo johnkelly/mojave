@@ -6,7 +6,7 @@ app.controller('IngredientsCtrl', function($scope, $state, $timeout, Ingredient,
 
   $scope.measurement_data = Measurement.get({}, function() {
     $scope.measurements = $scope.measurement_data.measurements;
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.ingredient_data = Ingredient.get({}, function() {
     $scope.ingredients = $scope.ingredient_data.ingredients;
@@ -17,7 +17,7 @@ app.controller('IngredientsCtrl', function($scope, $state, $timeout, Ingredient,
 
     $scope.content_loaded = true;
     Helpers.hide_loading();
-  });
+  }, function(response){ Helpers.ajax_error_handling(response) });
 
   $scope.deleteIngredient = function(ingredient) {
     Ingredient.remove({ id: ingredient.id }, function() {

@@ -38,4 +38,9 @@ app.service('CurrentUser', function(localStorageService) {
     localStorageService.add('mojave_email', user.email);
     localStorageService.add('mojave_first_name', user.first_name);
   }
+
+  this.sign_out = function(){
+    this.delete_all();
+    location.reload()
+  }
 });
