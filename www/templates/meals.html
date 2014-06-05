@@ -7,16 +7,14 @@
   </ion-nav-buttons>
   <ion-content class="has-header" ng-show="content_loaded">
     <div ng-show="users_meals">
-      <div class="list card" ng-repeat="user_meal in users_meals| orderBy:['scheduled_at']">
-        <div class="item item-divider">
-          {{ user_meal.scheduled_at }}
-        </div>
-        <div class="item item-body">
-          {{ user_meal.meal.name }}
-          <button ng-click="deleteUserMeal(user_meal)">Delete</button>
-          <button ng-click="viewMealDetails(user_meal.meal)">View</button>
-        </div>
-      </div>
+      <ion-list >
+        <ion-item ng-repeat="user_meal in users_meals| orderBy:['scheduled_at']" ng-click="viewMealDetails(user_meal.meal)">
+          {{ user_meal.scheduled_at }} - {{ user_meal.meal.name }}
+          <ion-option-button class="button-assertive" ng-click="deleteUserMeal(user_meal)">
+            <i class="icon ion-close-round"></i>
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
     </div>
     <div ng-hide="users_meals" class="no_meals">
       <h2>No meals logged :(</h2>
